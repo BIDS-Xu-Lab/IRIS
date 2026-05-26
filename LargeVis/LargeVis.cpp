@@ -1,3 +1,6 @@
+// Based on https://raw.githubusercontent.com/lferry007/LargeVis/refs/heads/master/Linux/LargeVis.cpp
+// Modified by Brian Ondov on 2026-05-21
+
 #include "LargeVis.h"
 #include <map>
 #include <float.h>
