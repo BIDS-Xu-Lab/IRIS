@@ -26,6 +26,7 @@ def cost(time, zeta, rho, bins=100):
 
 def get_rho(t, zeta=0.1, bins=100):
 	tests = np.arange(-5, 5, 0.01)
+	t = (t - np.min(t)) / (np.max(t) - np.min(t))
 	return tests[np.argmin([cost(t, zeta, x, bins) for x in tests])]
 
 def logit(x):
