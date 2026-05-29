@@ -52,7 +52,7 @@ def logit(x):
 
 def fit_transform(data, time, **kwargs):
     """
-    Perform time-structure manifold projection.
+    Perform time-structured manifold projection.
 
     Parameters
     ----------
@@ -64,8 +64,8 @@ def fit_transform(data, time, **kwargs):
 		n_iterations : int, optional
 			The number of stochastic gradient descent steps to perform, in millions. Defaults to `n_samples // 100`.
         sample_time : float, str, optional
-            If a scalar, resample each time point `t_i` uniformly within `[t_i, t_i + sample_time).
-            If 'hetero', resample each time point `t_i` uniformly within `[t_i, t_i + (t_i+1 - t_i) / 2].
+            If a scalar, resample each time point t_i uniformly within [t_i, t_i + sample_time).
+            If 'hetero', resample each time point t_i uniformly within [t_i, t_j], where t_j is the next highest unique time point.
 			If None (default), no resampling is performed.
 		return_polar : bool, optional
 			If True, return the layout in polar coordinates (radius, angle). Defaults to False.
