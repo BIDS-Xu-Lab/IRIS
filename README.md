@@ -4,6 +4,56 @@ IRIS performs nonlinear dimension reduction (similar to UMAP, t-SNE, or LargeVis
 incorporates timestamps of data points to stucture the layout, with earlier points near
 the center and later points near the perimeter.
 
+## Installation
+
+    pip install iris-learn
+
+## Basic usage
+
+    from IRIS import fit_transform
+
+    layout = fit_transform(X, t)
+
+Where:
+- `X` is a high dimensional dataset in a numpy array of shape (samples, variables).
+- `t` is associated scalar timestamps in a numpy array of shape (samples,).
+
+`layout` will be a numpy array of shape (samples, 2) containing the low-dimensional layout.
+
+## Demos
+
+### Developmental single-cell RNA-seq data
+
+Data from [A single-cell time-lapse of mouse prenatal development from gastrula to birth](https://doi.org/10.1038/s41586-024-07069-w)
+
+[Interactive version](https://clinicalnlp.org/IRIS/iris_vs_umap.html)
+
+![Comparison of IRIS and UMAP for a developmental scRNA-seq dataset](https://clinicalnlp.org/IRIS/demo-scrna.png)
+
+### Literature data
+
+Embeddings of titles and abstracts for a collection of articles related to imaging in Alzheimer's Disease
+
+[Interactive version](https://medviz.org/adrd-iris)
+
+![IRIS layout of literature related to imaging in Alzheimer's Disease](https://clinicalnlp.org/IRIS/demo-lit.png)
+
+## Citation
+
+If you use IRIS in your research, please cite:
+
+    @misc{ondov2026iristimestructuredmanifoldprojections,
+          title={IRIS: time-structured manifold projections}, 
+          author={Brian Ondov and Chia-Hsuan Chang and Weipeng Zhou and Xingjian Zhang and Xueqing Peng and Yutong Xie and Huan He and Qiaozhu Mei and Hua Xu},
+          year={2026},
+          eprint={2605.30810},
+          archivePrefix={arXiv},
+          primaryClass={cs.LG},
+          url={https://arxiv.org/abs/2605.30810}, 
+    }
+
+## Package documentation
+
     fit_transform(data, time, **kwargs)
         Perform time-structured manifold projection.
         
@@ -15,10 +65,10 @@ the center and later points near the perimeter.
             Timestamps for each sample. Should be a 1D numpy array with shape (n_samples,).
         **kwargs :
                     n_iterations : int, optional
-                            The number of stochastic gradient descent steps to perform, in millions. Defaults to `n_samples // 100`.
+                            The number of stochastic gradient descent steps to perform, in millions. Defaults to n_samples // 100.
             sample_time : float, str, optional
-                If a scalar, resample each time point `t_i` uniformly within `[t_i, t_i + sample_time).
-                If 'hetero', resample each time point `t_i` uniformly within `[t_i, t_i + (t_i+1 - t_i) / 2].
+                If a scalar, resample each time point t_i uniformly within [t_i, t_i + sample_time).
+                If 'hetero', resample each time point t_i uniformly within [t_i, t_j], where t_j is the next highest unique time point.
                             If None (default), no resampling is performed.
                     return_polar : bool, optional
                             If True, return the layout in polar coordinates (radius, angle). Defaults to False.
