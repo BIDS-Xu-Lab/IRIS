@@ -40,7 +40,7 @@ Embeddings of titles and abstracts for a collection of articles related to imagi
 
 ## Citation
 
-If you use IRIS in your research, please cite:
+If you use IRIS in your research, please cite our [preprint](https://doi.org/10.48550/arXiv.2605.30810):
 
     @misc{ondov2026iristimestructuredmanifoldprojections,
           title={IRIS: time-structured manifold projections}, 
