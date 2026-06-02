@@ -68,7 +68,7 @@ def fit_transform(data, time, **kwargs):
             If 'hetero', resample each time point t_i uniformly within [t_i, t_j], where t_j is the next highest unique time point.
 			If None (default), no resampling is performed.
 		return_polar : bool, optional
-			If True, return the layout in polar coordinates (radius, angle). Defaults to False.
+			If True, return the layout in polar coordinates ([radius], [angle in radians]). Defaults to False.
         zeta : float, optional
             The ratio of inner diameter to outer diameter. Should be in [0, 1]. Defaults to 0.1.
 		rho : float, optional
@@ -121,7 +121,7 @@ def fit_transform(data, time, **kwargs):
     if 'zeta' not in kwargs:
         kwargs['zeta'] = 0.1
     if 'alpha' not in kwargs:
-        kwargs['alpha'] = 0.1
+        kwargs['alpha'] = 1.0
     if 'beta' not in kwargs:
         kwargs['beta'] = 0.95
     if 'gamma' not in kwargs:
