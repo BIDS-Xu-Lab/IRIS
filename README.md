@@ -1,5 +1,7 @@
 # IRIS: Time-structured Manifold Projections
 
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/iris-learn?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=PyPI)](https://pypi.org/project/iris-learn)
+
 IRIS performs nonlinear dimension reduction (similar to UMAP, t-SNE, or LargeVis), but
 incorporates timestamps of data points to stucture the layout, with earlier points near
 the center and later points near the perimeter.
