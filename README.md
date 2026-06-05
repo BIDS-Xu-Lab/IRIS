@@ -28,7 +28,7 @@ Where:
 
 Data from [A single-cell time-lapse of mouse prenatal development from gastrula to birth](https://doi.org/10.1038/s41586-024-07069-w)
 
-[Interactive version](https://clinicalnlp.org/IRIS/iris_vs_umap.html)
+[Interactive version](https://clinicalnlp.org/IRIS/iris_vs_umap.html) · [Tutorial](docs/tutorial-embryo.ipynb)
 
 ![Comparison of IRIS and UMAP for a developmental scRNA-seq dataset](https://clinicalnlp.org/IRIS/demo-scrna.png)
 
